@@ -1,29 +1,549 @@
-% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+\documentclass[a4paper,11pt]{article}
 
-\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
 
-\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\geometry{margin=2.5cm}
 
-\title{Simple Sample} % Sets article title
-\author{My Name} % Sets authors name
-\date{\today} % Sets date for date compiled
+\title{Manuelle Systemtestf\"alle\\[0.5em]\large ChronoScope -- Online Aufgaben-Planungssystem\\NI0}
+\author{Elias Kerlin}
+\date{Stand: \today}
 
-% The preamble ends with the command \begin{document}
-\begin{document} % All begin commands must be paired with an end command somewhere
-    \maketitle % creates title using information in preamble (title, author, date)
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
 
-    \section{Hello World!} % creates a section
+% ============================================================
+\section{Allgemeine Testumgebung}
+% ============================================================
 
-    \textbf{Hello World!} Today I am learning \LaTeX. %notice how the command will end at the first non-alphabet charecter such as the . after \LaTeX
-     \LaTeX{} is a great program for writing math. I can write in line math such as $a^2+b^2=c^2$ %$ tells LaTexX to compile as math
-     . I can also give equations their own space:
-    \begin{equation} % Creates an equation environment and is compiled as math
-    \gamma^2+\theta^2=\omega^2
-    \end{equation}
-    If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).
-    Also notice how even though I hit enter after that sentence and here $\downarrow$
-     \LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Eigenschaft} & \textbf{Wert} \\
+\midrule
+Testsystem-URL        & \texttt{https://chronoscope.ni0.team} \\
+Browser               & aktueller Chrome / Firefox \\
+Testbenutzer          & Testnutzer mit g\"ultigem Keycloak-Account \\
+Ben\"otigte Rollen    & Benutzer, Organisationsadministrator \\
+Backend               & erreichbar und funktionsf\"ahig \\
+\bottomrule
+\end{tabular}
 
-    For a new paragraph I can leave a blank space in my code.
+\bigskip
+\noindent\textbf{Allgemeine Voraussetzungen f\"ur alle Testf\"alle:}
+\begin{itemize}[nosep]
+  \item Anwendung ist gestartet und erreichbar
+  \item Benutzer ist \"uber Keycloak angemeldet
+  \item Backend und Datenbank sind verf\"ugbar
+\end{itemize}
 
-\end{document} % This is the end of the document
+% ============================================================
+\section{Testf\"alle nach Stories}
+% ============================================================
+
+% ------------------------------------------------------------
+\subsection{OR-49 -- Kalender, Listen und Split View}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR49-01: Kalenderansicht laden}
+
+\textbf{Testziel:} Kalenderansicht wird korrekt geladen und Aufgaben werden angezeigt.
+
+\textbf{Akzeptanzkriterien:} Ladezeit $<$ 5\,s (AK010); Oberfl\"ache konsistent (NFA030--NFA031)
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer navigiert zur Kalenderansicht & Kalender wird angezeigt \\
+2 & Benutzer pr\"uft, ob vorhandene Aufgaben sichtbar sind & Aufgaben erscheinen im Kalender \\
+3 & Benutzer wechselt zwischen Tages-/Wochen-/Monatsansicht & Ansicht wechselt korrekt \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR49-02: Listenansicht anzeigen}
+
+\textbf{Testziel:} Listenansicht zeigt alle Tasks (statisch und dynamisch) an.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer wechselt zur Listenansicht & Liste aller Aufgaben wird angezeigt \\
+2 & Benutzer pr\"uft, ob statische und dynamische Tasks vorhanden sind & Beide Typen sind sichtbar \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR49-03: Split View verwenden}
+
+\textbf{Testziel:} Split View zeigt Kalender und Liste gleichzeitig an.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer aktiviert Split View & Kalender und Liste werden nebeneinander angezeigt \\
+2 & Benutzer erstellt eine Aufgabe & Aufgabe erscheint in beiden Ansichten \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-50 -- Aufgaben/Termine/Blocker erfassen}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR50-01: Dynamische Aufgabe erfolgreich erfassen}
+
+\textbf{Testziel:} Benutzer kann eine dynamische Aufgabe erstellen und diese wird gespeichert.
+
+\textbf{Akzeptanzkriterien:} Fehlereingaben werden erkannt; Kommunikationsfehler behandelt
+
+\textbf{Testdaten:}
+\begin{tabular}{@{}ll@{}}
+Name & \textit{Bericht schreiben} \\
+Beschreibung & \textit{Schreibe einen Bericht dar\"uber} \\
+Deadline & 06.07.2026 \\
+Dauer & 120\,min \\
+\end{tabular}
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq{} & Erstellungsdialog \"offnet sich \\
+2 & Benutzer gibt Testdaten ein & Eingaben werden \"ubernommen \\
+3 & Benutzer w\"ahlt Typ \glqq Dynamisch\grqq{} & Zus\"atzliche Felder (Dauer, Min-/Max-Scope) erscheinen \\
+4 & Benutzer speichert & Aufgabe erscheint in der \"Ubersicht \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR50-02: Statischen Blocker erfassen}
+
+\textbf{Testziel:} Benutzer kann einen statischen Blocker (fester Termin) erstellen.
+
+\textbf{Testdaten:}
+\begin{tabular}{@{}ll@{}}
+Name & \textit{Arzttermin} \\
+Start & 25.04.2026 10:00 \\
+Ende & 25.04.2026 11:00 \\
+Blocker & Ja \\
+\end{tabular}
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq{} & Dialog \"offnet sich \\
+2 & Benutzer w\"ahlt Typ \glqq Statisch\grqq{} und aktiviert Blocker & Blocker-Option ist gesetzt \\
+3 & Benutzer gibt Start-/Endzeit ein und speichert & Blocker erscheint im Kalender \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR50-03: Fehlereingabe beim Erfassen}
+
+\textbf{Testziel:} Ung\"ultige Eingaben werden erkannt und eine Fehlermeldung angezeigt.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer l\"asst Pflichtfeld \glqq Name\grqq{} leer und speichert & Fehlermeldung wird angezeigt \\
+2 & Benutzer gibt Endzeit vor Startzeit ein und speichert & Fehlermeldung wird angezeigt \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-51 -- Planungsalgorithmus}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR51-01: Plan erstellen lassen}
+
+\textbf{Testziel:} Der Planungsalgorithmus plant Aufgaben in verf\"ugbare Arbeitszeiten ein.
+
+\textbf{Akzeptanzkriterien:} Algorithmus findet g\"ultige L\"osung (AK020); Min-/Max-Zeiten
+
+\textbf{Voraussetzung:} Mehrere dynamische Aufgaben und Arbeitszeiten sind bereits angelegt.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer klickt auf \glqq Plan erstellen\grqq{} & Planungsvorgang wird gestartet \\
+2 & Benutzer wartet auf Ergebnis & Scopes werden im Kalender angezeigt \\
+3 & Benutzer pr\"uft, ob Scopes innerhalb der Arbeitszeiten liegen & Alle Scopes liegen in definierten Arbeitszeiten \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR51-02: Plan mit Abh\"angigkeiten}
+
+\textbf{Testziel:} Algorithmus ber\"ucksichtigt Abh\"angigkeiten zwischen Aufgaben.
+
+\textbf{Voraussetzung:} Aufgabe B h\"angt von Aufgabe A ab.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer erstellt Plan & Plan wird generiert \\
+2 & Benutzer pr\"uft Reihenfolge & Aufgabe A ist vor Aufgabe B eingeplant \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-52 -- Aufgaben bearbeiten \& l\"oschen}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR52-01: Aufgabe bearbeiten}
+
+\textbf{Testziel:} Benutzer kann eine bestehende Aufgabe \"andern.
+
+\textbf{Akzeptanzkriterien:} Bearbeiten $<$ 5\,s (AK010); Fehlereingaben erkannt
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer w\"ahlt eine bestehende Aufgabe aus & Details werden angezeigt \\
+2 & Benutzer \"andert den Namen und speichert & \"Anderung wird \"ubernommen \\
+3 & Benutzer pr\"uft die \"Ubersicht & Neuer Name ist sichtbar \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR52-02: Aufgabe l\"oschen}
+
+\textbf{Testziel:} Benutzer kann eine Aufgabe l\"oschen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer w\"ahlt eine Aufgabe aus & Details werden angezeigt \\
+2 & Benutzer klickt auf \glqq L\"oschen\grqq{} & Best\"atigungsdialog erscheint \\
+3 & Benutzer best\"atigt & Aufgabe ist aus der \"Ubersicht verschwunden \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-53 -- Wiederkehrende Aufgaben}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR53-01: Wiederkehrende Aufgabe anlegen}
+
+\textbf{Testziel:} Benutzer kann eine Aufgabe als wiederkehrend festlegen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer erstellt eine neue Aufgabe & Dialog \"offnet sich \\
+2 & Benutzer aktiviert Wiederholung (z.\,B. w\"ochentlich) & Wiederholungsoptionen werden angezeigt \\
+3 & Benutzer speichert & Aufgabe erscheint mehrfach im Kalender \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-54 -- Dependencies}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR54-01: Abh\"angigkeit erstellen}
+
+\textbf{Testziel:} Benutzer kann eine Abh\"angigkeit zwischen zwei dynamischen Aufgaben erstellen.
+
+\textbf{Voraussetzung:} Mindestens zwei dynamische Aufgaben existieren.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer \"offnet Aufgabe B & Details werden angezeigt \\
+2 & Benutzer f\"ugt Aufgabe A als Abh\"angigkeit hinzu & Abh\"angigkeit wird gespeichert \\
+3 & Benutzer pr\"uft die Anzeige & Abh\"angigkeit ist sichtbar \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR54-02: Abh\"angigkeit l\"oschen}
+
+\textbf{Testziel:} Benutzer kann eine bestehende Abh\"angigkeit entfernen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer \"offnet Aufgabe mit Abh\"angigkeit & Abh\"angigkeit wird angezeigt \\
+2 & Benutzer entfernt die Abh\"angigkeit & Abh\"angigkeit verschwindet \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-55 -- Arbeitszeiten festlegen}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR55-01: Arbeitszeiten definieren}
+
+\textbf{Testziel:} Benutzer kann seine Arbeitszeiten (WorkSlots) festlegen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer navigiert zu den Arbeitszeit-Einstellungen & Einstellungsseite wird angezeigt \\
+2 & Benutzer legt einen Arbeitsslot an (z.\,B. Mo 9--17 Uhr) & Slot wird gespeichert \\
+3 & Benutzer pr\"uft den Kalender & Arbeitszeit ist im Kalender sichtbar \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-56 -- Organisationszuordnung}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR56-01: Benutzer einer Organisation zuordnen}
+
+\textbf{Testziel:} Ein Benutzer wird korrekt einer Organisation zugeordnet.
+
+\textbf{Voraussetzung:} Organisation existiert; Benutzer ist Org-Admin.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Admin \"offnet die Organisationsverwaltung & Mitgliederliste wird angezeigt \\
+2 & Admin f\"ugt einen Benutzer hinzu & Benutzer erscheint in der Liste \\
+3 & Benutzer meldet sich an & Organisation ist dem Benutzer zugeordnet \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-57 -- Organisation anlegen/l\"oschen}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR57-01: Organisation anlegen}
+
+\textbf{Testziel:} Administrator kann eine neue Organisation erstellen.
+
+\textbf{Akzeptanzkriterien:} Operation $<$ 5\,s (AK010)
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Admin navigiert zur Organisationsverwaltung & Verwaltungsseite \"offnet sich \\
+2 & Admin klickt \glqq Organisation anlegen\grqq{} und gibt Namen ein & Formular wird angezeigt \\
+3 & Admin speichert & Neue Organisation erscheint in der Liste \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\bigskip
+
+\subsubsection*{ST-OR57-02: Organisation l\"oschen}
+
+\textbf{Testziel:} Administrator kann eine Organisation l\"oschen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Admin w\"ahlt eine Organisation aus & Details werden angezeigt \\
+2 & Admin klickt \glqq L\"oschen\grqq{} und best\"atigt & Organisation ist entfernt \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-58 -- Organisation verwalten}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR58-01: Benutzerrolle in Organisation \"andern}
+
+\textbf{Testziel:} Org-Admin kann Rollen von Benutzern innerhalb der Organisation \"andern.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Admin \"offnet Mitgliederliste der Organisation & Liste wird angezeigt \\
+2 & Admin \"andert Rolle eines Benutzers & Rolle wird aktualisiert \\
+3 & Benutzer meldet sich neu an & Neue Rolle ist wirksam \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-59 -- Filtern / Suchen}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR59-01: Aufgaben filtern}
+
+\textbf{Testziel:} Benutzer kann Aufgaben nach Kriterien filtern.
+
+\textbf{Akzeptanzkriterien:} Ergebnisse in $<$ 5\,s
+
+\textbf{Voraussetzung:} Mehrere Aufgaben mit unterschiedlichen Labels existieren.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer \"offnet die Aufgaben\"ubersicht & Alle Aufgaben werden angezeigt \\
+2 & Benutzer setzt einen Filter (z.\,B. nach Label) & Nur passende Aufgaben werden angezeigt \\
+3 & Benutzer entfernt den Filter & Alle Aufgaben sind wieder sichtbar \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-60 -- Aufgabenstatus-Anzeige}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR60-01: Status wird korrekt angezeigt}
+
+\textbf{Testziel:} Der Status von Aufgaben (aktiv, erledigt, abgelaufen) wird korrekt dargestellt.
+
+\textbf{Akzeptanzkriterien:} Status wird automatisch aktualisiert
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer \"offnet die Aufgaben\"ubersicht & Aufgaben mit Status sind sichtbar \\
+2 & Benutzer markiert eine Aufgabe als erledigt & Status wechselt auf \glqq erledigt\grqq{} \\
+3 & Benutzer pr\"uft eine abgelaufene Aufgabe & Status zeigt \glqq abgelaufen\grqq{} \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ------------------------------------------------------------
+\subsection{OR-61 -- Sprache \"andern}
+% ------------------------------------------------------------
+
+\subsubsection*{ST-OR61-01: Sprache wechseln}
+
+\textbf{Testziel:} Benutzer kann die Anzeigesprache der Anwendung \"andern.
+
+\textbf{Akzeptanzkriterien:} Sprache wird korrekt \"ubernommen (AK050)
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+\midrule
+1 & Benutzer \"offnet die Spracheinstellungen & Sprachoptionen werden angezeigt \\
+2 & Benutzer w\"ahlt eine andere Sprache (z.\,B. Englisch) & Oberfl\"ache wechselt die Sprache \\
+3 & Benutzer navigiert durch die Anwendung & Alle Texte sind in der neuen Sprache \\
+\bottomrule
+\end{longtable}
+
+\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+% ============================================================
+\section{Ergebnisprotokoll}
+% ============================================================
+
+\noindent
+Folgende Tabelle wird w\"ahrend der Testdurchf\"uhrung ausgef\"ullt:
+
+\bigskip
+\begin{longtable}{|p{2.5cm}|p{2cm}|p{1.5cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+\textbf{Testfall-ID} & \textbf{Tester} & \textbf{Datum} & \textbf{Release} & \textbf{Ergebnis} & \textbf{Bemerkung} \\
+\hline
+ST-OR49-01 & & & & & \\
+\hline
+ST-OR49-02 & & & & & \\
+\hline
+ST-OR49-03 & & & & & \\
+\hline
+ST-OR50-01 & & & & & \\
+\hline
+ST-OR50-02 & & & & & \\
+\hline
+ST-OR50-03 & & & & & \\
+\hline
+ST-OR51-01 & & & & & \\
+\hline
+ST-OR51-02 & & & & & \\
+\hline
+ST-OR52-01 & & & & & \\
+\hline
+ST-OR52-02 & & & & & \\
+\hline
+ST-OR53-01 & & & & & \\
+\hline
+ST-OR54-01 & & & & & \\
+\hline
+ST-OR54-02 & & & & & \\
+\hline
+ST-OR55-01 & & & & & \\
+\hline
+ST-OR56-01 & & & & & \\
+\hline
+ST-OR57-01 & & & & & \\
+\hline
+ST-OR57-02 & & & & & \\
+\hline
+ST-OR58-01 & & & & & \\
+\hline
+ST-OR59-01 & & & & & \\
+\hline
+ST-OR60-01 & & & & & \\
+\hline
+ST-OR61-01 & & & & & \\
+\hline
+\end{longtable}
+
+\end{document}
