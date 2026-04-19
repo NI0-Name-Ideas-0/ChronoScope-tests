@@ -11,15 +11,15 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage[sfdefault]{roboto}
 
 % --- Variablen für das gesamte Dokument ---
 \newcommand{\docTitle}{Manuelle Systemtestfälle}
 \newcommand{\docSubtitle}{Online Aufgaben-Planungssystem / Selbst-Managementsysteme}
 \newcommand{\docProject}{ChronoScope / NI0}
-\newcommand{\docVersion}{1.0}
 \newcommand{\docAuthor}{Elias Kerlin}
 \newcommand{\docReviewer}{NIO Team} 
-\newcommand{\docDate}{04.2026}
+\newcommand{\docDate}{20.04.2026}
 
 % --- Seitenränder ---
 \geometry{a4paper, margin=2.5cm, bottom=3.5cm, headheight=15pt}
@@ -31,14 +31,14 @@
 
 % Links: Seitenzahl [Abstand] Titel: {docTitle}
 \fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
-% Rechts: Version: {docVersion} [Abstand] Logo
-\fancyfoot[R]{Version: \docVersion \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
+% Rechts: Version: {docDate} [Abstand] Logo
+\fancyfoot[R]{Version: \docDate \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
 
 % Style für Seiten wie das Inhaltsverzeichnis (muss auch Fußzeile haben)
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
-    \fancyfoot[R]{Version: \docVersion \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
+    \fancyfoot[R]{Version: \docDate \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
     \renewcommand{\headrulewidth}{0pt}
 }
 
@@ -53,25 +53,20 @@
     \centering
     \vspace*{0.5cm}
     
-    {\Huge \textbf{\docTitle} \par}
+    {\fontsize{42}{50}\selectfont \textbf{\docTitle} \par}
     \vspace{0.5cm}
     {\large \textit{\docSubtitle} \par}
-    \vspace{0.3cm}
-    {\large \docProject \par}
     
     \vspace{1.5cm}
     \includegraphics[width=\textwidth]{image.png}
-    
-    \vfill
-    
-    \begin{tabular}{rl}
-        \textbf{Autor:} & \docAuthor \\
-        \textbf{Version:} & \docVersion \\
-        \textbf{Prüfleser:} & \docReviewer \\
-    \end{tabular}
-    
     \vspace{1.5cm}
-    {\large \docDate \par}
+    {\large
+    \textbf{NI0 - Name Ideas 0} \\
+    \docDate\\
+    \textbf{Autor:} \docAuthor \\
+    \textbf{Prüfleser:} \docReviewer \\
+    }
+    \vfill
 \end{titlepage}
 
 % ============================================================
@@ -226,8 +221,20 @@ Backend                & erreichbar und funktionsfähig \\
 \textbf{Testfall-ID} & \textbf{Tester} & \textbf{Datum} & \textbf{Release} & \textbf{Ergebnis} & \textbf{Bemerkung} \\ \hline
 ST-OR49-01 & & & & & \\ \hline
 ST-OR49-02 & & & & & \\ \hline
+ST-OR49-03 & & & & & \\ \hline
 ST-OR50-01 & & & & & \\ \hline
+ST-OR50-02 & & & & & \\ \hline
 ST-OR51-01 & & & & & \\ \hline
+ST-OR52-01 & & & & & \\ \hline
+ST-OR53-01 & & & & & \\ \hline
+ST-OR54-01 & & & & & \\ \hline
+ST-OR55-01 & & & & & \\ \hline
+ST-OR56-01 & & & & & \\ \hline
+ST-OR57-01 & & & & & \\ \hline
+ST-OR57-02 & & & & & \\ \hline
+ST-OR58-01 & & & & & \\ \hline
+ST-OR59-01 & & & & & \\ \hline
+ST-OR60-01 & & & & & \\ \hline
 ST-OR61-01 & & & & & \\ \hline
 \end{longtable}
 
