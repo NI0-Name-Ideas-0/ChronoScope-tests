@@ -11,70 +11,73 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
-\usepackage{xcolor}
 
-% Variablen für einfache Anpassung
+% --- Variablen für das gesamte Dokument ---
 \newcommand{\docTitle}{Manuelle Systemtestfälle}
+\newcommand{\docSubtitle}{Online Aufgaben-Planungssystem / Selbst-Managementsysteme}
+\newcommand{\docProject}{ChronoScope / NI0}
 \newcommand{\docVersion}{1.0}
+\newcommand{\docAuthor}{Elias Kerlin}
+\newcommand{\docReviewer}{NIO Team} 
+\newcommand{\docDate}{04.2026}
 
-% Seitenränder
-\geometry{
-    a4paper,
-    margin=2.5cm,
-    bottom=3.5cm, % Mehr Platz für die Fußzeile
-    headheight=15pt
-}
+% --- Seitenränder ---
+\geometry{a4paper, margin=2.5cm, bottom=3.5cm, headheight=15pt}
 
-% --- Fußzeilen-Konfiguration ---
+% --- Fußzeilen-Konfiguration (Wie im Screenshot gewünscht) ---
 \pagestyle{fancy}
-\fancyhf{} % Alle Felder leeren
-\renewcommand{\headrulewidth}{0pt} % Keine Linie oben
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
 
-% Fußzeile: [Seitenzahl] [Titel] ----------- [Version] [Logo]
-\fancyfoot[L]{\thepage \hspace{1em} Titel: \docTitle}
-\fancyfoot[R]{Version: \docVersion \hspace{1em} \raisebox{-0.2\height}{\includegraphics[height=0.6cm]{ni0-logo-darkblue.png}}}
+% Links: Seitenzahl [Abstand] Titel: {docTitle}
+\fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
+% Rechts: Version: {docVersion} [Abstand] Logo
+\fancyfoot[R]{Version: \docVersion \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
 
-% Inhaltsverzeichnis Name ändern
-\renewcommand{\contentsname}{Gliederung}
-
-% Titelseite ohne Fußzeile
+% Style für Seiten wie das Inhaltsverzeichnis (muss auch Fußzeile haben)
 \fancypagestyle{plain}{
     \fancyhf{}
+    \fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
+    \fancyfoot[R]{Version: \docVersion \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
     \renewcommand{\headrulewidth}{0pt}
 }
+
+\renewcommand{\contentsname}{Gliederung}
 
 \begin{document}
 
 % ============================================================
-% TITELSEITE (Basierend auf Screenshot)
+% TITELSEITE (Gemäß Anweisung: Titel, Untertitel kursiv, Bild, Metadaten)
 % ============================================================
 \begin{titlepage}
     \centering
-    \vspace*{-1.5cm}
-    
-    % Cover-Bild
-    \includegraphics[width=\textwidth]{image.png}
-    
-    \vspace{2.5cm}
+    \vspace*{0.5cm}
     
     {\Huge \textbf{\docTitle} \par}
-    \vspace{0.8cm}
+    \vspace{0.5cm}
+    {\large \textit{\docSubtitle} \par}
+    \vspace{0.3cm}
+    {\large \docProject \par}
     
-    {\large ChronoScope -- Online Aufgaben-Planungssystem / NI0 \par}
+    \vspace{1.5cm}
+    \includegraphics[width=\textwidth]{image.png}
     
     \vfill
     
-    {\large \textbf{NIO -- Name Ideas 0}} \par
-    \vspace{0.2cm}
-    {\large 04.2026}
+    \begin{tabular}{rl}
+        \textbf{Autor:} & \docAuthor \\
+        \textbf{Version:} & \docVersion \\
+        \textbf{Prüfleser:} & \docReviewer \\
+    \end{tabular}
     
+    \vspace{1.5cm}
+    {\large \docDate \par}
 \end{titlepage}
 
 % ============================================================
 % GLIEDERUNG
 % ============================================================
 \newpage
-\thispagestyle{fancy}
 \tableofcontents
 \newpage
 
@@ -96,8 +99,8 @@ Backend                & erreichbar und funktionsfähig \\
 \bigskip
 \noindent\textbf{Voraussetzungen:}
 \begin{itemize}[nosep]
-  \item Anwendung ist gestartet und erreichbar
-  \item Benutzer ist über Keycloak angemeldet
+  \item Anwendung ist gestartet und erreichbar.
+  \item Benutzer ist über Keycloak angemeldet.
 \end{itemize}
 
 % ============================================================
@@ -109,36 +112,111 @@ Backend                & erreichbar und funktionsfähig \\
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
 \toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
 1 & Navigiert zur Kalenderansicht & Kalender wird angezeigt \\
-2 & Prüft Aufgaben-Sichtbarkeit & Aufgaben erscheinen im Kalender \\ \bottomrule
+2 & Prüft Aufgaben-Sichtbarkeit & Aufgaben erscheinen im Kalender \\
+3 & Wechsel zwischen Ansichten & Ansicht wechselt korrekt \\ \bottomrule
 \end{longtable}
 \textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\subsubsection*{ST-OR49-02: Listenansicht anzeigen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Wechsel zur Listenansicht & Liste aller Aufgaben wird angezeigt \\
+2 & Prüft statische/dynamische Tasks & Beide Typen sind sichtbar \\ \bottomrule
+\end{longtable}
 
 \subsection{OR-50 -- Aufgaben/Termine/Blocker erfassen}
 \subsubsection*{ST-OR50-01: Dynamische Aufgabe erfassen}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
 \toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
 1 & Klickt auf "Aufgabe erstellen" & Erstellungsdialog öffnet sich \\
-2 & Wählt Typ "Dynamisch" & Felder für Dauer erscheinen \\ \bottomrule
+2 & Gibt Testdaten ein & Eingaben werden übernommen \\
+3 & Wählt Typ "Dynamisch" & Felder für Dauer/Scope erscheinen \\ \bottomrule
 \end{longtable}
-\textbf{Ergebnis:} \rule{10cm}{0.4pt}
+
+\subsubsection*{ST-OR50-02: Statischen Blocker erfassen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Wählt Typ "Statisch" & Blocker-Option ist gesetzt \\
+2 & Gibt Zeiten ein & Blocker erscheint im Kalender \\ \bottomrule
+\end{longtable}
 
 \subsection{OR-51 -- Planungsalgorithmus}
 \subsubsection*{ST-OR51-01: Plan erstellen lassen}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
 \toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
-1 & Klickt auf "Plan erstellen" & Planungsvorgang startet \\ \bottomrule
+1 & Klickt auf "Plan erstellen" & Planungsvorgang wird gestartet \\
+2 & Wartet auf Ergebnis & Scopes werden im Kalender angezeigt \\ \bottomrule
 \end{longtable}
-\textbf{Ergebnis:} \rule{10cm}{0.4pt}
 
-% ... [Hier folgen alle weiteren Stories OR-52 bis OR-61 analog] ...
+\subsection{OR-52 -- Aufgaben bearbeiten \& löschen}
+\subsubsection*{ST-OR52-01: Aufgabe bearbeiten}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Ändert Titel/Dauer & Änderung wird übernommen \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-53 -- Wiederkehrende Aufgaben}
+\subsubsection*{ST-OR53-01: Wiederholung anlegen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Aktiviert "Wiederholung" & Auswahl für Intervalle erscheint \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-54 -- Dependencies}
+\subsubsection*{ST-OR54-01: Abhängigkeit erstellen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Wählt Aufgabe B & Abhängigkeit zu A wird gesetzt \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-55 -- Arbeitszeiten festlegen}
+\subsubsection*{ST-OR55-01: Zeit-Slots definieren}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Legt Arbeitszeit fest & Algorithmus plant nur in diesem Slot \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-56 -- Organisationszuordnung}
+\subsubsection*{ST-OR56-01: Benutzer zuordnen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Admin lädt User ein & User sieht Organisations-Daten \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-57 -- Organisation anlegen/löschen}
+\subsubsection*{ST-OR57-01: Organisation anlegen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Klickt "Organisation anlegen" & Neue Org wird erstellt \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-58 -- Organisation verwalten}
+\subsubsection*{ST-OR58-01: Rollen ändern}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Befördert User zum Admin & Rechte werden sofort erweitert \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-59 -- Filtern / Suchen}
+\subsubsection*{ST-OR59-01: Aufgaben suchen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Gibt Begriff in Suche ein & Liste zeigt nur Treffer \\ \bottomrule
+\end{longtable}
+
+\subsection{OR-60 -- Aufgabenstatus-Anzeige}
+\subsubsection*{ST-OR60-01: Status prüfen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+\toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
+1 & Markiert als erledigt & Status-Icon ändert sich \\ \bottomrule
+\end{longtable}
 
 \subsection{OR-61 -- Sprache ändern}
 \subsubsection*{ST-OR61-01: Sprache wechseln}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
 \toprule \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\ \midrule
-1 & Wählt Sprache Englisch & Oberfläche wechselt Sprache \\ \bottomrule
+1 & Wählt "Englisch" & Komplette UI ist übersetzt \\ \bottomrule
 \end{longtable}
-\textbf{Ergebnis:} \rule{10cm}{0.4pt}
 
 % ============================================================
 \section{Ergebnisprotokoll}
@@ -147,6 +225,7 @@ Backend                & erreichbar und funktionsfähig \\
 \hline
 \textbf{Testfall-ID} & \textbf{Tester} & \textbf{Datum} & \textbf{Release} & \textbf{Ergebnis} & \textbf{Bemerkung} \\ \hline
 ST-OR49-01 & & & & & \\ \hline
+ST-OR49-02 & & & & & \\ \hline
 ST-OR50-01 & & & & & \\ \hline
 ST-OR51-01 & & & & & \\ \hline
 ST-OR61-01 & & & & & \\ \hline
