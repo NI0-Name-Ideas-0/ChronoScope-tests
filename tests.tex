@@ -18,7 +18,7 @@
 \newcommand{\docSubtitle}{Online Aufgaben-Planungssystem / Selbst-Managementsysteme}
 \newcommand{\docProject}{ChronoScope / NI0}
 \newcommand{\docAuthor}{Elias Kerlin}
-\newcommand{\docReviewer}{NIO Team} 
+\newcommand{\docReviewer}{NIO Team}
 \newcommand{\docDate}{20.04.2026}
 
 % --- Seitenränder ---
@@ -29,12 +29,9 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 
-% Links: Seitenzahl [Abstand] Titel: {docTitle}
 \fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
-% Rechts: Version: {docDate} [Abstand] Logo
 \fancyfoot[R]{Version: \docDate \hspace{1.5em} \raisebox{-0.25\height}{\includegraphics[height=0.7cm]{ni0-logo-darkblue.png}}}
 
-% Style für Seiten wie das Inhaltsverzeichnis
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[L]{\thepage \hspace{1.5em} Titel: \docTitle}
@@ -103,14 +100,10 @@
 \section{Testfälle nach Stories}
 % ============================================================
 
-% ------------------------------------------------------------
 \subsection{OR-49 -- Kalender, Listen und Split View}
-% ------------------------------------------------------------
 
 \subsubsection*{ST-OR49-01: Kalenderansicht laden}
-
-\textbf{Testziel:} Kalenderansicht wird korrekt geladen und Aufgaben werden angezeigt.
-
+\textbf{Testziel:} Kalenderansicht wird korrekt geladen und Aufgaben werden angezeigt. \\
 \textbf{Akzeptanzkriterien:} Ladezeit $<$ 5\,s (AK010); Oberfläche konsistent (NFA030--NFA031)
 
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
@@ -119,14 +112,11 @@
     \midrule
     1 & Benutzer navigiert zur Kalenderansicht & Kalender wird angezeigt \\
     2 & Benutzer prüft, ob vorhandene Aufgaben sichtbar sind & Aufgaben erscheinen im Kalender \\
-    3 & Benutzer wechselt zwischen Tages-/Wochen-/Monatsansicht & Ansicht wechselt korrekt \\
+    3 & Benutzer wechselt zwischen Ansichten & Ansicht wechselt korrekt \\
     \bottomrule
 \end{longtable}
 
-\bigskip
-
 \subsubsection*{ST-OR49-02: Listenansicht anzeigen}
-
 \textbf{Testziel:} Listenansicht zeigt alle Tasks (statisch und dynamisch) an.
 
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
@@ -134,31 +124,249 @@
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
     1 & Benutzer wechselt zur Listenansicht & Liste aller Aufgaben wird angezeigt \\
-    2 & Benutzer prüft, ob statische und dynamische Tasks vorhanden sind & Beide Typen sind sichtbar \\
+    2 & Benutzer prüft statische/dynamische Tasks & Beide Typen sind sichtbar \\
     \bottomrule
 \end{longtable}
 
-\bigskip
-
 \subsubsection*{ST-OR49-03: Split View verwenden}
-
 \textbf{Testziel:} Split View zeigt Kalender und Liste gleichzeitig an.
 
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer aktiviert Split View & Kalender und Liste werden nebeneinander angezeigt \\
+    1 & Benutzer aktiviert Split View & Ansichten werden nebeneinander angezeigt \\
     2 & Benutzer erstellt eine Aufgabe & Aufgabe erscheint in beiden Ansichten \\
     \bottomrule
 \end{longtable}
 
-% ------------------------------------------------------------
 \subsection{OR-50 -- Aufgaben/Termine/Blocker erfassen}
-% ------------------------------------------------------------
 
 \subsubsection*{ST-OR50-01: Dynamische Aufgabe erfolgreich erfassen}
+\textbf{Testziel:} Benutzer kann eine dynamische Aufgabe erstellen. \\
+\textbf{Testdaten:} Name: Bericht, Deadline: 06.07.2026, Dauer: 120\,min.
 
-\textbf{Testziel:} Benutzer kann eine dynamische Aufgabe erstellen und diese wird gespeichert.
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq & Erstellungsdialog öffnet sich \\
+    2 & Benutzer gibt Testdaten ein & Eingaben werden übernommen \\
+    3 & Benutzer wählt Typ \glqq Dynamisch\grqq & Felder für Dauer/Scope erscheinen \\
+    4 & Benutzer speichert & Aufgabe erscheint in Übersicht \\
+    \bottomrule
+\end{longtable}
 
-\textbf{Akzeptanzkriterien:} Fehlere
+\subsubsection*{ST-OR50-02: Statischen Blocker erfassen}
+\textbf{Testziel:} Benutzer kann einen statischen Blocker erstellen.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer wählt Typ \glqq Statisch\grqq & Blocker-Option ist gesetzt \\
+    2 & Benutzer gibt Zeiten ein & Blocker erscheint im Kalender \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR50-03: Fehlereingabe beim Erfassen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Name leer lassen und speichern & Fehlermeldung wird angezeigt \\
+    2 & Ende vor Startzeit eingeben & Fehlermeldung wird angezeigt \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-51 -- Planungsalgorithmus}
+
+\subsubsection*{ST-OR51-01: Plan erstellen lassen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Klick auf \glqq Plan erstellen\grqq & Planungsvorgang wird gestartet \\
+    2 & Warten auf Ergebnis & Scopes werden im Kalender angezeigt \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR51-02: Plan mit Abhängigkeiten}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer erstellt Plan & Plan wird generiert \\
+    2 & Reihenfolge prüfen & Aufgabe A ist vor Aufgabe B geplant \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-52 -- Aufgaben bearbeiten \& löschen}
+
+\subsubsection*{ST-OR52-01: Aufgabe bearbeiten}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Ändert Titel/Dauer & Änderungen werden übernommen \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR52-02: Aufgabe löschen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Klick auf \glqq Löschen\grqq & Aufgabe wird aus Liste entfernt \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-53 -- Wiederkehrende Aufgaben}
+
+\subsubsection*{ST-OR53-01: Wiederkehrende Aufgabe anlegen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Aktiviert Wiederholung & Aufgabe erscheint mehrfach im Kalender \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-54 -- Dependencies}
+
+\subsubsection*{ST-OR54-01: Abhängigkeit erstellen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Fügt Aufgabe A als Abhängigkeit hinzu & Abhängigkeit wird gespeichert \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR54-02: Abhängigkeit löschen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Entfernt die Abhängigkeit & Abhängigkeit verschwindet \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-55 -- Arbeitszeiten festlegen}
+
+\subsubsection*{ST-OR55-01: Arbeitszeiten definieren}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Legt Arbeitsslot an & Arbeitszeit ist im Kalender sichtbar \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-56 -- Organisationszuordnung}
+
+\subsubsection*{ST-OR56-01: Benutzer zuordnen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Admin fügt Benutzer hinzu & Benutzer erscheint in der Liste \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-57 -- Organisation anlegen/löschen}
+
+\subsubsection*{ST-OR57-01: Organisation anlegen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Klick \glqq Organisation anlegen\grqq & Neue Organisation erscheint in Liste \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR57-02: Organisation löschen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Klick \glqq Löschen\grqq & Organisation wurde entfernt \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-58 -- Organisation verwalten}
+
+\subsubsection*{ST-OR58-01: Benutzerrolle ändern}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Admin ändert Rolle & Rechte werden aktualisiert \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-59 -- Filtern / Suchen}
+
+\subsubsection*{ST-OR59-01: Aufgaben filtern}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Setzt einen Filter & Nur passende Aufgaben sichtbar \\
+    2 & Entfernt den Filter & Alle Aufgaben wieder sichtbar \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-60 -- Aufgabenstatus-Anzeige}
+
+\subsubsection*{ST-OR60-01: Status korrekt angezeigt}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Markiert als erledigt & Status wechselt auf \glqq erledigt\grqq \\
+    2 & Prüft abgelaufene Aufgabe & Status zeigt \glqq abgelaufen\grqq \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-61 -- Sprache ändern}
+
+\subsubsection*{ST-OR61-01: Sprache wechseln}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Wählt Sprache Englisch & Oberfläche wechselt die Sprache \\
+    \bottomrule
+\end{longtable}
+
+% ============================================================
+\section{Ergebnisprotokoll}
+% ============================================================
+\begin{longtable}{|p{2.5cm}|p{2cm}|p{1.5cm}|p{2cm}|p{2cm}|p{3cm}|}
+    \hline
+    \textbf{Testfall-ID} & \textbf{Tester} & \textbf{Datum} & \textbf{Release} & \textbf{Ergebnis} & \textbf{Bemerkung} \\ \hline
+    ST-OR49-01 & & & & & \\ \hline
+    ST-OR49-02 & & & & & \\ \hline
+    ST-OR49-03 & & & & & \\ \hline
+    ST-OR50-01 & & & & & \\ \hline
+    ST-OR50-02 & & & & & \\ \hline
+    ST-OR50-03 & & & & & \\ \hline
+    ST-OR51-01 & & & & & \\ \hline
+    ST-OR51-02 & & & & & \\ \hline
+    ST-OR52-01 & & & & & \\ \hline
+    ST-OR52-02 & & & & & \\ \hline
+    ST-OR53-01 & & & & & \\ \hline
+    ST-OR54-01 & & & & & \\ \hline
+    ST-OR54-02 & & & & & \\ \hline
+    ST-OR55-01 & & & & & \\ \hline
+    ST-OR56-01 & & & & & \\ \hline
+    ST-OR57-01 & & & & & \\ \hline
+    ST-OR57-02 & & & & & \\ \hline
+    ST-OR58-01 & & & & & \\ \hline
+    ST-OR59-01 & & & & & \\ \hline
+    ST-OR60-01 & & & & & \\ \hline
+    ST-OR61-01 & & & & & \\ \hline
+\end{longtable}
+
+\end{document}
