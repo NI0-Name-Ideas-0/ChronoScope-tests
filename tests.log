@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.1)  19 APR 2026 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.1)  20 APR 2026 00:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -353,15 +353,15 @@ Package: figureversions 2025-04-29 v1.0.1 Figure versions
 Already applied: [0000-00-00] Fall back to v1 on input line 76.
 ))
 LaTeX Font Info:    Trying to load font information for T1+Roboto-LF on input l
-ine 47.
+ine 44.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/roboto/T1Roboto-LF.fd
 File: T1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for T1/Roboto-LF.
 )
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 47.
+(Font)              `T1/Roboto-LF/regular/n' on input line 44.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 47.
+(Font)              scaled to size 10.95pt on input line 44.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
@@ -373,24 +373,24 @@ Package babel Info: 'ngerman' activates 'german' shorthands.
 )
 \openout1 = `tests.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -426,7 +426,7 @@ LaTeX Font Info:    ... okay on input line 47.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 44.
 (./tests.out) (./tests.out)
 \@outlinefile=\write3
 \openout3 = `tests.out'.
@@ -457,43 +457,43 @@ e
 \c@mv@tabular=\count319
 \c@mv@boldtabular=\count320
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 56.
+(Font)              `T1/Roboto-LF/regular/n' on input line 53.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 42.0pt on input line 56.
+(Font)              scaled to size 42.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 56.
+(Font)              `T1/Roboto-LF/bold/n' on input line 53.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 42.0pt on input line 56.
+(Font)              scaled to size 42.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 58.
+(Font)              `T1/Roboto-LF/regular/n' on input line 55.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 58.
+(Font)              scaled to size 12.0pt on input line 55.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/it' aliased to
-(Font)              `T1/Roboto-LF/regular/it' on input line 58.
+(Font)              `T1/Roboto-LF/regular/it' on input line 55.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 12.0pt on input line 58.
+(Font)              scaled to size 12.0pt on input line 55.
 <image.png, id=68, 620.3175pt x 438.63875pt>
 File: image.png Graphic file (type png)
 <use image.png>
-Package pdftex.def Info: image.png  used on input line 61.
+Package pdftex.def Info: image.png  used on input line 58.
 (pdftex.def)             Requested size: 455.24411pt x 321.91035pt.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 64.
+(Font)              `T1/Roboto-LF/bold/n' on input line 62.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 64.
+(Font)              scaled to size 12.0pt on input line 62.
 
 [1
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texlive
 /texdir/texmf-dist/fonts/enc/dvips/roboto/rbto_b5rac7.enc} <./image.png>]
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 76.
+(Font)              `T1/Roboto-LF/regular/n' on input line 74.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 76.
+(Font)              scaled to size 14.4pt on input line 74.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 76.
+(Font)              `T1/Roboto-LF/bold/n' on input line 74.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 14.4pt on input line 76.
+(Font)              scaled to size 14.4pt on input line 74.
 
 (./tests.toc
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
@@ -513,56 +513,74 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <ni0-logo-darkblue.png, id=95, 1284.8pt x 369.38pt>
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 77.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 75.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 \newpage
+l.75 \newpage
               [1 <./ni0-logo-darkblue.png>]
 LaTeX Font Info:    Trying to load font information for TS1+Roboto-LF on input 
-line 97.
+line 95.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/roboto/TS1Roboto-LF.fd
 File: TS1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for TS1/Roboto-LF.
 
 )
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
-(Font)              `TS1/Roboto-LF/regular/n' on input line 97.
+(Font)              `TS1/Roboto-LF/regular/n' on input line 95.
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 97.
+(Font)              scaled to size 10.95pt on input line 95.
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]|\T1/Roboto-LF/regular/n/10.95 Prüft sta-ti-sche/dynamische
+Underfull \hbox (badness 1769) in paragraph at lines 114--114
+[]|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft, ob vor-han-de-ne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+[]|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft sta-ti-
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 138--139
+[]|\T1/Roboto-LF/regular/n/10.95 Ansichten wer-den ne-ben-ein-an-
  []
 
 
 ignored: Infinite glue shrinkage found in box being split
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 129.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 141.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
 [2{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/op
 t/texlive/texdir/texmf-dist/fonts/enc/dvips/roboto/rbto_ocbbsb.enc}]
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 172.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 202.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
  [3]
+Underfull \hbox (badness 5133) in paragraph at lines 211--212
+[]|\T1/Roboto-LF/regular/n/10.95 Änderungen wer-den über-nom-
+ []
+
+File: ni0-logo-darkblue.png Graphic file (type png)
+<use ni0-logo-darkblue.png>
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 264.
+(pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
+[4]
 ignored: Infinite glue shrinkage found in box being split
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 207.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 318.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
-
-[4]
+ [5]
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 241.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 372.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
- [5] (./tests.aux)
+ [6] (./tests.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
@@ -571,21 +589,22 @@ Package rerunfilecheck Info: File `tests.out' has not changed.
 (rerunfilecheck)             Checksum: 5F15D83CEB9A5A2D55260A294021083F;3367.
  ) 
 Here is how much of TeX's memory you used:
- 12321 strings out of 467349
- 200690 string characters out of 5417750
- 650204 words of memory out of 5000000
- 41191 multiletter control sequences out of 15000+600000
+ 12333 strings out of 467349
+ 200746 string characters out of 5417750
+ 660510 words of memory out of 5000000
+ 41190 multiletter control sequences out of 15000+600000
  678086 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,15n,79p,319b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Italic.pfb></opt/
 texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Regular.pfb></opt/te
-xlive/texdir/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on tests.pdf (6 pages, 190419 bytes).
+xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive
+/texdir/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on tests.pdf (7 pages, 203313 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
