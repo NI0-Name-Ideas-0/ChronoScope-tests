@@ -103,16 +103,79 @@
 \subsection{OR-55 -- Arbeitszeiten festlegen}
 
 \subsubsection*{ST-OR55-01: Arbeitszeiten definieren}
+\textbf{Testziel:} Benutzer kann seine Arbeitszeiten definieren. \\
+\textbf{Testdaten:} Montag: 09:00--17:00, Dienstag: 10:00--16:00, Mittwoch: 09:00--17:00, Donnerstag: 10:00--16:00, Freitag: 09:00--15:00.
+
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Einstellungen öffnen über Profil -> Einstellungen & Die Einstellungen werden angezeigt \\
-    2 & Auf den Reiter "Arbeitszeiten" klicken & Der Reiter wird angezeigt \\
+    1 & Einstellungen öffnen über das Profil-Icon & Die Einstellungen werden angezeigt \\
+    2 & Auf den Reiter \glqq Arbeitszeiten\grqq \ klicken & Der Reiter wird angezeigt \\
     3 & Arbeitszeiten per Drag-und-Drop hinzufügen, verschieben, löschen & Arbeitszeiten werden angezeigt \\
     4 & Auf Speichern klicken & Arbeitszeiten werden gespeichert \\
     5 & Einstellungen schließen und erneut öffnen & Arbeitszeiten sind weiterhin sichtbar \\
     6 & Einstellungen schließen und Kalenderansicht öffnen & Arbeitszeiten sind in der Kalenderansicht sichtbar \\
+    \bottomrule
+\end{longtable}
+
+
+\subsection{OR-50 -- Aufgaben/Termine/Blocker erfassen}
+
+\subsubsection*{ST-OR50-01: Dynamische Aufgabe erfolgreich erfassen}
+\textbf{Testziel:} Benutzer kann eine dynamische Aufgabe erstellen. \\
+\textbf{Testdaten:} Name: Bericht, Start: 01.05.2026 Deadline: 06.07.2026, Konto: Privat, Dauer: 120\,min.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq & Erstellungsdialog öffnet sich \\
+    2 & Benutzer wählt Typ \glqq Dynamisch/Geplant\grqq & Felder für Dauer/Scope erscheinen \\
+    3 & Benutzer gibt Testdaten ein & Eingaben werden übernommen \\
+    4 & Benutzer speichert & Aufgabe erscheint in Übersicht und wird automatisch eingeplant \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR50-02: Statischen Termin erfassen}
+\textbf{Testziel:} Benutzer kann einen statischen Termin erstellen.
+\textbf{Testdaten:} Name: Meeting, Start: 21.05.2026 12:00, Ende: 21.05.2026 13:00, Konto: Privat
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq & Erstellungsdialog öffnet sich \\
+    2 & Benutzer wählt Typ \glqq Statisch\grqq & Felder für Start und Ende erscheinen \\
+    3 & Benutzer gibt Zeiten ein & Termin erscheint im Kalender \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR50-03: Statischen Blocker erfassen}
+\textbf{Testziel:} Benutzer kann einen statischen Blocker erstellen.
+\textbf{Testdaten:} Name: Pause, Start: 21.05.2026 14:00, Ende: 21.05.2026 15:00, Konto: Privat
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq & Erstellungsdialog öffnet sich \\
+    2 & Benutzer wählt Typ \glqq Statisch\grqq & Felder für Start und Ende erscheinen \\
+    3 & Benutzer aktiviert \glqq Blocker\grqq & Blocker-Option wird aktiviert und Farb-Optionen werden ausgeblendet \\
+    4 & Benutzer gibt Zeiten ein & Blocker erscheint im Kalender \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR50-04: Fehlereingabe beim Erfassen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Name leer lassen & Speichern nicht möglich \\
+    2 & Konto leer lassen & Speichern nicht möglich \\
+    3 & Ende vor Startzeit eingeben & Speichern nicht möglich \\
+    4 & Ende gleich Startzeit eingeben & Fehlermeldung wird angezeigt \\
+    5 & Dauer eines Dynamischen Tasks weniger als 15 Minuten & Speichern nicht möglich \\
     \bottomrule
 \end{longtable}
 
@@ -126,7 +189,7 @@
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer navigiert zur Kalenderansicht & Kalender wird angezeigt \\
+    1 & Benutzer aktiviert die Kalenderansicht & Kalender wird angezeigt \\
     2 & Benutzer prüft, ob vorhandene Aufgaben sichtbar sind & Aufgaben erscheinen im Kalender \\
     3 & Benutzer wechselt zwischen Ansichten & Ansicht wechselt korrekt \\
     \bottomrule
@@ -139,7 +202,7 @@
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer wechselt zur Listenansicht & Liste aller Aufgaben wird angezeigt \\
+    1 & Benutzer aktiviert die Listenansicht & Liste aller Aufgaben wird angezeigt \\
     2 & Benutzer prüft statische/dynamische Tasks & Beide Typen sind sichtbar \\
     \bottomrule
 \end{longtable}
@@ -151,48 +214,73 @@
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer aktiviert Split View & Ansichten werden nebeneinander angezeigt \\
+    1 & Benutzer aktiviert beide Ansichten & Ansichten werden nebeneinander angezeigt \\
     2 & Benutzer prüft statische/dynamische Tasks & Beide Typen sind sichtbar \\
     3 & Benutzer erstellt eine Aufgabe & Aufgabe erscheint in beiden Ansichten \\
     \bottomrule
 \end{longtable}
 
-\subsection{OR-50 -- Aufgaben/Termine/Blocker erfassen}
+\subsection{OR-52 -- Aufgaben bearbeiten \& löschen}
 
-\subsubsection*{ST-OR50-01: Dynamische Aufgabe erfolgreich erfassen}
-\textbf{Testziel:} Benutzer kann eine dynamische Aufgabe erstellen. \\
-\textbf{Testdaten:} Name: Bericht, Deadline: 06.07.2026, Dauer: 120\,min.
-
+\subsubsection*{ST-OR52-01: Aufgabe bearbeiten}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer klickt auf \glqq Aufgabe erstellen\grqq & Erstellungsdialog öffnet sich \\
-    2 & Benutzer gibt Testdaten ein & Eingaben werden übernommen \\
-    3 & Benutzer wählt Typ \glqq Dynamisch\grqq & Felder für Dauer/Scope erscheinen \\
-    4 & Benutzer speichert & Aufgabe erscheint in Übersicht \\
+    1 & Klick auf eine beliebige Aufgabe zum Bearbeiten & Bearbeitungsdialog öffnet sich \\
+    2 & Ändert Titel und Dauer/Start/Endzeitpunkt & Änderungen werden übernommen \\
     \bottomrule
 \end{longtable}
 
-\subsubsection*{ST-OR50-02: Statischen Blocker erfassen}
-\textbf{Testziel:} Benutzer kann einen statischen Blocker erstellen.
-
+\subsubsection*{ST-OR52-02: Aufgabe löschen}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Benutzer wählt Typ \glqq Statisch\grqq & Blocker-Option ist gesetzt \\
-    2 & Benutzer gibt Zeiten ein & Blocker erscheint im Kalender \\
+    1 & Klick auf eine beliebige Aufgabe zum Löschen & Aufgabe wird aus Liste entfernt \\
     \bottomrule
 \end{longtable}
 
-\subsubsection*{ST-OR50-03: Fehlereingabe beim Erfassen}
+\subsection{OR-53 -- Wiederkehrende Aufgaben}
+
+\subsubsection*{ST-OR53-01: Wiederkehrende Aufgabe anlegen}
+\textbf{Testziel:} Benutzer kann eine wiederkehrende Aufgabe erstellen. \\
+\textbf{Testdaten:} Name: Bericht, Start: 01.05.2026 Deadline: 06.07.2026, Konto: Privat, Wiederholung: Wöchentlich, Dauer: 120\,min.
+
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Name leer lassen und speichern & Fehlermeldung wird angezeigt \\
-    2 & Ende vor Startzeit eingeben & Fehlermeldung wird angezeigt \\
+    1 & Anlegen der Aufgabe mit Wiederholung & Aufgabe wird angelegt \\
+    2 & Prüft, ob Aufgabe mehrfach im Kalender erscheint & Aufgabe erscheint mehrfach im Kalender \\
+    \bottomrule
+\end{longtable}
+
+\subsection{OR-54 -- Dependencies}
+
+\subsubsection*{ST-OR54-01: Abhängigkeit erstellen}
+\textbf{Testdaten:} Zwei Aufgaben A und B, wobei A vor B erledigt werden muss.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Erstellt zwei Aufgaben A und B & Beide Aufgaben werden angelegt \\
+    2 & Fügt Aufgabe A als Abhängigkeit hinzu & Abhängigkeit wird gespeichert \\
+    3 & Prüft die Abhängigkeit & Aufgabe B zeigt an, dass sie von Aufgabe A abhängig ist \\
+    4 & Planung durchführen & Aufgabe A ist vor Aufgabe B eingeplant \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection*{ST-OR54-02: Abhängigkeit löschen}
+\textbf{Testdaten:} Zwei Aufgaben A und B, wobei A vor B erledigt werden muss und die Abhängigkeit bereits besteht.
+
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Entfernt die Abhängigkeit & Abhängigkeit verschwindet \\
+    2 & Prüft die Abhängigkeit & Aufgabe B zeigt keine Abhängigkeit mehr an \\
     \bottomrule
 \end{longtable}
 
@@ -205,6 +293,7 @@
     \midrule
     1 & Klick auf \glqq Plan erstellen\grqq & Planungsvorgang wird gestartet \\
     2 & Warten auf Ergebnis & Scopes werden im Kalender angezeigt \\
+    3 & Prüfung der Planung & Nach erscheinen der Benachrichtigung sind alle Aufgaben innerhalb der Arbeitszeiten eingeplant \\
     \bottomrule
 \end{longtable}
 
@@ -218,57 +307,6 @@
     \bottomrule
 \end{longtable}
 
-\subsection{OR-52 -- Aufgaben bearbeiten \& löschen}
-
-\subsubsection*{ST-OR52-01: Aufgabe bearbeiten}
-\begin{longtable}{cp{5.5cm}p{5.5cm}}
-    \toprule
-    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
-    \midrule
-    1 & Ändert Titel/Dauer & Änderungen werden übernommen \\
-    \bottomrule
-\end{longtable}
-
-\subsubsection*{ST-OR52-02: Aufgabe löschen}
-\begin{longtable}{cp{5.5cm}p{5.5cm}}
-    \toprule
-    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
-    \midrule
-    1 & Klick auf \glqq Löschen\grqq & Aufgabe wird aus Liste entfernt \\
-    \bottomrule
-\end{longtable}
-
-\subsection{OR-53 -- Wiederkehrende Aufgaben}
-
-\subsubsection*{ST-OR53-01: Wiederkehrende Aufgabe anlegen}
-\begin{longtable}{cp{5.5cm}p{5.5cm}}
-    \toprule
-    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
-    \midrule
-    1 & Aktiviert Wiederholung & Aufgabe erscheint mehrfach im Kalender \\
-    \bottomrule
-\end{longtable}
-
-\subsection{OR-54 -- Dependencies}
-
-\subsubsection*{ST-OR54-01: Abhängigkeit erstellen}
-\begin{longtable}{cp{5.5cm}p{5.5cm}}
-    \toprule
-    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
-    \midrule
-    1 & Fügt Aufgabe A als Abhängigkeit hinzu & Abhängigkeit wird gespeichert \\
-    \bottomrule
-\end{longtable}
-
-\subsubsection*{ST-OR54-02: Abhängigkeit löschen}
-\begin{longtable}{cp{5.5cm}p{5.5cm}}
-    \toprule
-    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
-    \midrule
-    1 & Entfernt die Abhängigkeit & Abhängigkeit verschwindet \\
-    \bottomrule
-\end{longtable}
-
 \subsection{OR-56 -- Organisationszuordnung}
 
 \subsubsection*{ST-OR56-01: Benutzer zuordnen}
@@ -276,38 +314,44 @@
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Admin fügt Benutzer hinzu & Benutzer erscheint in der Liste \\
+    1 & Admin fügt Benutzer hinzu & Benutzer erhält eine Einladung \\
     \bottomrule
 \end{longtable}
 
 \subsection{OR-57 -- Organisation anlegen/löschen}
 
 \subsubsection*{ST-OR57-01: Organisation anlegen}
+\textbf{Voraussetzung:} Organisation wurde in Keycloak angelegt \\
+
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Klick \glqq Organisation anlegen\grqq & Neue Organisation erscheint in Liste \\
+    1 & Anmeldung mit einem Benutzer der Organisation & Anmeldung erfolgreich \\
+    2 & Navigiert zu Einstellungen für Organisation und Profile & Organisation wird angezeigt \\
     \bottomrule
 \end{longtable}
 
 \subsubsection*{ST-OR57-02: Organisation löschen}
+\textbf{Voraussetzung:} Organisation wurde in Keycloak angelegt \\
+
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Klick \glqq Löschen\grqq & Organisation wurde entfernt \\
+    1 & Anmeldung mit einem Benutzer der gelöschten Organisation & Anmeldung erfolgreich \\
+    2 & Navigiert zu Einstellungen für Organisation und Profile & Organisation wird nicht mehr angezeigt \\
     \bottomrule
 \end{longtable}
 
 \subsection{OR-58 -- Organisation verwalten}
 
-\subsubsection*{ST-OR58-01: Benutzerrolle ändern}
+\subsubsection*{ST-OR58-01: Benutzer entfernen}
 \begin{longtable}{cp{5.5cm}p{5.5cm}}
     \toprule
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
-    1 & Admin ändert Rolle & Rechte werden aktualisiert \\
+    1 & Admin entfernt Benutzer & Benutzer wird aus Organisation entfernt \\
     \bottomrule
 \end{longtable}
 
@@ -323,6 +367,16 @@
     \bottomrule
 \end{longtable}
 
+\subsubsection*{ST-OR59-02: Aufgaben suchen}
+\begin{longtable}{cp{5.5cm}p{5.5cm}}
+    \toprule
+    \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
+    \midrule
+    1 & Gibt Suchbegriff ein & Nur passende Aufgaben aufgelistet
+    \bottomrule
+\end{longtable}
+
+
 \subsection{OR-60 -- Aufgabenstatus-Anzeige}
 
 \subsubsection*{ST-OR60-01: Status korrekt angezeigt}
@@ -331,7 +385,7 @@
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
     1 & Markiert als erledigt & Status wechselt auf \glqq erledigt\grqq \\
-    2 & Prüft abgelaufene Aufgabe & Status zeigt \glqq abgelaufen\grqq \\
+    2 & Prüft aktuelle Aufgabe & Status zeigt aktuell anstehende Aufgaben an \\
     \bottomrule
 \end{longtable}
 
@@ -343,6 +397,12 @@
     \textbf{Nr.} & \textbf{Aktion} & \textbf{Erwartetes Ergebnis} \\
     \midrule
     1 & Wählt Sprache Englisch & Oberfläche wechselt die Sprache \\
+    2 & Wählt Sprache Deutsch & Oberfläche wechselt die Sprache zurück \\
+    3 & Prüft, ob alle Texte übersetzt sind & Alle Texte sind in der gewählten Sprache \\
+    4 & Prüft, ob die Spracheinstellung gespeichert wird & Nach Neuladen der Seite ist die gewählte Sprache weiterhin aktiv \\
+    5 & Prüft, ob die Spracheinstellung in allen Ansichten gilt & Alle Ansichten zeigen die gewählte Sprache an \\
+    6 & Prüft, ob Fehlermeldungen ebenfalls übersetzt werden & Fehlermeldungen erscheinen in der gewählten Sprache \\
+    7 & Prüft, ob die Spracheinstellung auch für Benachrichtigungen gilt & Benachrichtigungen erscheinen in der gewählten Sprache \\
     \bottomrule
 \end{longtable}
 
@@ -352,27 +412,28 @@
 \begin{longtable}{|p{2.2cm}|p{2cm}|p{2cm}|p{2cm}|p{5cm}|}
     \hline
     \textbf{Testfall-ID} & \textbf{Tester} & \textbf{Datum} & \textbf{Ergebnis} & \textbf{Bemerkung} \\ \hline
-    ST-OR49-01 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR49-02 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR49-03 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR50-01 & Paul Berndt & 10.05.2026 & Erfolgreich &  \\ \hline
-    ST-OR50-02 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR50-03 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR51-01 & Paul Berndt & 10.05.2026 & Limitiert & Wird automatisch ausgeführt bei erstellen eines Dynamischen Tasks, Button noch nicht angebunden. \\ \hline
-    ST-OR51-02 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR52-01 & Paul Berndt & 10.05.2026 & Erfolgreich & Bearbeiten aktuell nur in Listenansicht möglich. \\ \hline
-    ST-OR52-02 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR53-01 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR54-01 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR54-02 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR55-01 & Paul Berndt & 10.05.2026 & Erfolgreich & \\ \hline
-    ST-OR56-01 & & & & \\ \hline
-    ST-OR57-01 & & & & \\ \hline
-    ST-OR57-02 & & & & \\ \hline
-    ST-OR58-01 & & & & \\ \hline
-    ST-OR59-01 & Paul Berndt & 10.05.2026 & Erfolgreich & Filter in Listenansicht auf Today/Done \\ \hline
-    ST-OR60-01 & & & & \\ \hline
-    ST-OR61-01 & & & & \\ \hline
+    ST-OR55-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR50-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR50-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR50-03 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR50-04 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR49-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR49-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR49-03 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR52-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR52-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR53-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR54-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR54-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR51-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR51-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR56-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR57-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR57-02 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR58-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR59-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR60-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
+    ST-OR61-01 & Paul Berndt & 17.05.2026 & Erfolgreich & \\ \hline
 \end{longtable}
 
 \end{document}
