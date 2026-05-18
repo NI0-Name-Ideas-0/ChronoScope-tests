@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.1)  17 MAY 2026 23:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.1)  18 MAY 2026 02:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,123 +534,184 @@ LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 95.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\T1/Roboto-LF/regular/n/10.95 Auf den Rei-ter Är-beits-zei-
+Underfull \hbox (badness 2591) in paragraph at lines 113--113
+[]|\T1/Roboto-LF/regular/n/10.95 Einstellungen öff-nen über das
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\T1/Roboto-LF/regular/n/10.95 Arbeitszeiten per Drag-und-
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 112--112
+Underfull \hbox (badness 6995) in paragraph at lines 115--115
 \T1/Roboto-LF/regular/n/10.95 Drop hin-zu-fü-gen, ver-schie-ben,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 []|\T1/Roboto-LF/regular/n/10.95 Arbeitszeiten wer-den ge-spei-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 []|\T1/Roboto-LF/regular/n/10.95 Arbeitszeiten sind wei-ter-hin
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 130--130
-[]|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft, ob vor-han-de-ne
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\T1/Roboto-LF/regular/n/10.95 Benutzer wählt Typ ^^RDy-na-
  []
 
 
 ignored: Infinite glue shrinkage found in box being split
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 133.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 138.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
 [2{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/op
 t/texlive/texdir/texmf-dist/fonts/enc/dvips/roboto/rbto_ocbbsb.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
+Underfull \hbox (badness 2951) in paragraph at lines 149--150
+[]|\T1/Roboto-LF/regular/n/10.95 Felder für Start und En-de er-
+ []
+
+
+Overfull \hbox (27.55893pt too wide) in paragraph at lines 155--157
+\T1/Roboto-LF/bold/n/10.95 Testziel: \T1/Roboto-LF/regular/n/10.95 Be-nut-zer k
+ann einen sta-ti-schen Blo-cker er-stel-len. \T1/Roboto-LF/bold/n/10.95 Test-da
+-ten: \T1/Roboto-LF/regular/n/10.95 Na-me: Pau-se, Start: 21.05.2026
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 163--164
+[]|\T1/Roboto-LF/regular/n/10.95 Felder für Start und En-de er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+[]|\T1/Roboto-LF/regular/n/10.95 Blocker-Option wird ak-ti-viert
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+\T1/Roboto-LF/regular/n/10.95 und Farb-Optionen wer-den
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 193--193
+[]|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft, ob vor-han-de-ne
+ []
+
+File: ni0-logo-darkblue.png Graphic file (type png)
+<use ni0-logo-darkblue.png>
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 196.
+(pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 206--206
 []|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft sta-ti-
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 154--155
+Underfull \hbox (badness 2213) in paragraph at lines 217--218
 []|\T1/Roboto-LF/regular/n/10.95 Ansichten wer-den ne-ben-ein-an-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
 []|\T1/Roboto-LF/regular/n/10.95 Benutzer prüft sta-ti-
  []
 
 
-ignored: Infinite glue shrinkage found in box being split
-File: ni0-logo-darkblue.png Graphic file (type png)
-<use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 187.
-(pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
-[3]
-Underfull \hbox (badness 5133) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
+[]|\T1/Roboto-LF/regular/n/10.95 Ändert Ti-tel und Dau-
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 231--232
 []|\T1/Roboto-LF/regular/n/10.95 Änderungen wer-den über-nom-
  []
 
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 250.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 242.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
 [4]
+Underfull \hbox (badness 2443) in paragraph at lines 268--269
+[]|\T1/Roboto-LF/regular/n/10.95 Beide Auf-ga-ben wer-den an-ge-
+ []
+
+
+Underfull \hbox (badness 4752) in paragraph at lines 296--297
+[]|\T1/Roboto-LF/regular/n/10.95 Nach er-schei-nen der Be-nach-
+ []
+
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 312.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 298.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
- [5]
-Underfull \hbox (badness 2884) in paragraph at lines 361--361
-\T1/Roboto-LF/regular/n/10.95 bei er-stel-len ei-nes Dy-na-mi-
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--361
-\T1/Roboto-LF/regular/n/10.95 schen Tasks, But-ton noch
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
  []
 
-
-ignored: Infinite glue shrinkage found in box being split
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 376.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 345.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
 [6]
+Underfull \hbox (badness 3590) in paragraph at lines 401--401
+[]|\T1/Roboto-LF/regular/n/10.95 Prüft, ob al-le Tex-te über-setzt
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 403--404
+[]|\T1/Roboto-LF/regular/n/10.95 Alle An-sich-ten zei-gen die ge-
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 404--405
+[]|\T1/Roboto-LF/regular/n/10.95 Benachrichtigungen er-schei-nen
+ []
+
 File: ni0-logo-darkblue.png Graphic file (type png)
 <use ni0-logo-darkblue.png>
-Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 378.
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 406.
 (pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
- [7] (./tests.aux)
+[7]
+File: ni0-logo-darkblue.png Graphic file (type png)
+<use ni0-logo-darkblue.png>
+Package pdftex.def Info: ni0-logo-darkblue.png  used on input line 438.
+(pdftex.def)             Requested size: 69.2625pt x 19.91684pt.
+ [8] (./tests.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `tests.out' has not changed.
-(rerunfilecheck)             Checksum: 45892A31765BEE773A77078BB8567734;3367.
+(rerunfilecheck)             Checksum: 23616EFBE13250FA885B272CC33814D4;3367.
  ) 
 Here is how much of TeX's memory you used:
- 12340 strings out of 467349
- 200828 string characters out of 5417750
- 654495 words of memory out of 5000000
- 41196 multiletter control sequences out of 15000+600000
+ 12341 strings out of 467349
+ 200811 string characters out of 5417750
+ 656596 words of memory out of 5000000
+ 41192 multiletter control sequences out of 15000+600000
  678086 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,79p,319b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,319b,623s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Italic.pfb></opt/
 texlive/texdir/texmf-dist/fonts/type1/google/roboto/Roboto-Regular.pfb></opt/te
 xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive
 /texdir/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on tests.pdf (8 pages, 205488 bytes).
+Output written on tests.pdf (9 pages, 208473 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 228 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 73 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
